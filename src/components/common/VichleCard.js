@@ -65,8 +65,9 @@ const styles = StyleSheet.create({
     borderRadius: scale(5), // optional
   },
   imgContainer: {
-    top: 71,
-    left: 12,
+    // borderWidth: 1,
+    top: verticalScale(55),
+    left: scale(10),
   },
   text: {
     fontWeight: '500',

@@ -1,37 +1,37 @@
 export const SelectCountry = [
   {
     id: 1,
-    img: 'https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg',
-    name: 'Pakistan',
+    img: require('../../assets/imges/spain.png'),
+    name: 'Spain',
   },
   {
     id: 2,
-    img: 'https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg',
-    name: 'palestine',
+    img: require('../../assets/imges/united-states.png'),
+    name: 'united states',
   },
   {
     id: 3,
-    img: 'https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg',
-    name: 'spain',
+    img: require('../../assets/imges/uk.png'),
+    name: 'united kingdom',
   },
-  // {
-  //   id: 4,
-  //   img: require('../../assets/imges/uk.png'),
-  //   name: 'united-Kingdam',
-  // },
-  // {
-  //   id: 5,
-  //   img: require('../../assets/imges/united-states.png'),
-  //   name: 'united-states',
-  // },
-  // {
-  //   id: 6,
-  //   img: require('../../assets/imges/united-states.png'),
-  //   name: 'united-states',
-  // },
-  // {
-  //   id: 7,
-  //   img: require('../../assets/imges/united-states.png'),
-  //   name: 'united-states',
-  // },
+  {
+    id: 4,
+    img: require('../../assets/imges/france.png'),
+    name: 'France',
+  },
+  {
+    id: 5,
+    img: require('../../assets/imges/australia.png'),
+    name: 'Australia',
+  },
+  {
+    id: 6,
+    img: require('../../assets/imges/pakistan.png'),
+    name: 'pakistan',
+  },
+  {
+    id: 7,
+    img: require('../../assets/imges/palestine.png'),
+    name: 'palestine',
+  },
 ];

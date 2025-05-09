@@ -3,7 +3,7 @@ import React from 'react';
 import {Dimensions} from 'react-native';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
-const Button = ({title, onPress}) => {
+const Button = ({title, onPress, style}) => {
   console.log('props....', title);
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>

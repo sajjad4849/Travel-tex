@@ -1,4 +1,5 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {ProgressBar} from 'react-native-paper';
 import React from 'react';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {Dimensions} from 'react-native';
@@ -13,7 +14,17 @@ const SetProfile = () => {
     navigation.navigate('CompleteProfile');
   };
   return (
-    <View>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
+      {/* <StatusBar backgroundColor="white" barStyle="dark-content" /> */}
+      <View style={styles.wrapper}>
+        <View style={styles.backImgContainer}>
+          <Image
+            source={require('../../../assets/imges/Back.png')}
+            style={styles.img}
+          />
+        </View>
+        <ProgressBar progress={0.5} style={styles.bar} color="#200233" />
+      </View>
       <View style={styles.Container}>
         <View style={styles.childContainer}>
           <Text style={styles.textHeading}>Set up Profile</Text>
@@ -70,51 +81,87 @@ const SetProfile = () => {
 export default SetProfile;
 
 const styles = StyleSheet.create({
+  wrapper: {
+    position: 'absolute',
+    top: verticalScale(10),
+    width: SCREEN_WIDTH * 0.91,
+    left: scale(20),
+    // borderWidth: 1,
+    // alignSelf: 'center',
+  },
+  bar: {
+    width: SCREEN_WIDTH * 0.79,
+    left: scale(40),
+    height: verticalScale(8),
+    borderRadius: 20,
+    overflow: 'hidden',
+    backgroundColor: '#ddd',
+  },
+  backImgContainer: {
+    width: scale(24),
+    height: verticalScale(24),
+    top: verticalScale(20),
+    // left: scale(20),
+  },
+  img: {
+    width: scale(22),
+    height: verticalScale(16),
+  },
   Container: {
-    width: SCREEN_WIDTH * 0.9,
-    height: SCREEN_HEIGHT * 0.7,
-    top: 124,
-    left: 20,
+    width: SCREEN_WIDTH * 0.93,
+    height: verticalScale(550),
+    top: verticalScale(70),
+    position: 'absolute',
+    left: scale(15),
     // borderWidth: 2,
     // backgroundColor: 'green',
   },
   childContainer: {
-    width: SCREEN_WIDTH * 0.9,
-    height: SCREEN_HEIGHT * 0.3,
+    width: SCREEN_WIDTH * 0.93,
+    height: verticalScale(240),
     gap: 20,
     // borderWidth: 2,
     // borderColor: 'red',
   },
   textHeading: {
+    fontFamily: 'Montserrat',
     height: verticalScale(36),
     fontWeight: '600',
     fontSize: scale(24),
     lineHeight: verticalScale(36),
     textAlign: 'center',
   },
-  imgContainer: {
-    alignSelf: 'center',
-    width: scale(100),
-    height: verticalScale(80),
-  },
   paragraph: {
+    fontFamily: 'Montserrat',
     height: verticalScale(48),
     fontWeight: '400',
     fontSize: scale(16),
     lineHeight: verticalScale(24),
     color: '#858585',
     textAlign: 'center',
+    // borderWidth: 1,
   },
-  imgStyle: {
-    width: scale(100),
-    height: verticalScale(80),
-    resizeMode: 'contain',
+  imgContainer: {
+    alignSelf: 'center',
+    width: scale(140),
+    height: verticalScale(140),
+    // borderWidth: 1,
   },
   CameraStyle: {
     position: 'absolute',
-    top: 60,
-    left: 90,
+    width: scale(25),
+    height: verticalScale(25),
+    top: verticalScale(70),
+    left: scale(100),
+    // borderWidth: 1,
   },
+
+  imgStyle: {
+    width: scale(120),
+    height: verticalScale(120),
+    resizeMode: 'contain',
+  },
+
   Container2: {
     width: SCREEN_WIDTH * 0.9,
     height: SCREEN_HEIGHT * 0.4,
@@ -127,8 +174,9 @@ const styles = StyleSheet.create({
     lineHeight: verticalScale(24),
   },
   btnContainer: {
+    position: 'absolute',
     width: SCREEN_WIDTH * 0.9,
-    left: 20,
-    top: 160,
+    left: scale(20),
+    top: verticalScale(620),
   },
 });

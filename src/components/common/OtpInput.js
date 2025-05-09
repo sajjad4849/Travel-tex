@@ -20,9 +20,9 @@ export default OtpInput;
 
 const styles = StyleSheet.create({
   inputBox: {
-    width: scale(60.5),
-    height: verticalScale(55),
-    borderWidth: 2,
+    width: scale(60),
+    height: verticalScale(59),
+    borderWidth: 1,
     borderColor: '#333333',
     borderRadius: moderateScale(80),
     fontWeight: 700,

@@ -10,9 +10,9 @@ const Inputbox = ({
   icon = null,
   style = null,
 }) => {
-  console.log('Place holder.....', placeholdar);
-  console.log('img.....', img);
-  console.log('icon.....', icon);
+  // console.log('Place holder.....', placeholdar);
+  // console.log('img.....', img);
+  // console.log('icon.....', icon);
 
   return (
     <View style={styles.Container}>
@@ -33,25 +33,27 @@ const styles = StyleSheet.create({
     gap: scale(12),
   },
   input: {
+    width: SCREEN_WIDTH * 0.92,
     position: 'relative',
     height: verticalScale(54),
     borderWidth: 1,
     borderRadius: moderateScale(80),
     paddingHorizontal: scale(45),
-    fontWeight: '300',     
+    fontWeight: '300',
     fontSize: scale(16),
+    fontFamily: 'Montserrat',
   },
   icon: {
     position: 'absolute',
-    top: 23,
+    top: 17,
     left: 16,
-    width: scale(20),
-    height: verticalScale(20),
+    width: scale(24),
+    height: verticalScale(24),
     resizeMode: 'contain',
   },
   icon2: {
-    left: 330,
-    top: -64,
+    left: 290,
+    top: -52,
     width: scale(24),
     height: verticalScale(24),
     resizeMode: 'contain',

@@ -30,16 +30,18 @@ const styles = StyleSheet.create({
   InnerSection: {
     flexDirection: 'row',
     alignItems: 'center',
-    alignSelf: 'center',
     // borderWidth: 1,
-    gap: moderateScale(12),
+    gap: moderateScale(10),
   },
   imgStyling: {
     width: scale(28),
     height: verticalScale(28),
+    resizeMode: 'contain',
   },
   text: {
     fontWeight: 500,
     fontSize: scale(16),
+    fontFamily: 'Montserrat',
+    lineHeight: verticalScale(24),
   },
 });

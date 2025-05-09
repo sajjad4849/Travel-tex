@@ -17,7 +17,7 @@ const SubScription = () => {
     navigation.navigate('Home');
   };
   return (
-    <View>
+    <View style={{backgroundColor: 'white', flex: 1}}>
       <View style={styles.SubScriptioContainer}>
         <Text style={styles.SubScriptionText}>Subscription</Text>
       </View>

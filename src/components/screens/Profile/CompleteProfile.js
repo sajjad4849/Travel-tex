@@ -1,4 +1,13 @@
-import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  StatusBar,
+  Image,
+} from 'react-native';
+import {ProgressBar} from 'react-native-paper';
 import React, {useEffect, useState} from 'react';
 import {VechilList} from '../../common/SelectAcData';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
@@ -22,7 +31,17 @@ const CompleteProfile = () => {
     console.log('Model is:', ModalVisibal ? 'open' : 'Closed');
   }, [ModalVisibal]);
   return (
-    <View>
+    <View style={{backgroundColor: 'white', flex: 1}}>
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
+      <View style={styles.wrapper}>
+        <View style={styles.backImgContainer}>
+          <Image
+            source={require('../../../assets/imges/Back.png')}
+            style={styles.img}
+          />
+        </View>
+        <ProgressBar progress={0.9} style={styles.bar} color="#200233" />
+      </View>
       <ModelComponent
         visible={ModalVisibal}
         transparent={true}
@@ -111,6 +130,32 @@ const CompleteProfile = () => {
 export default CompleteProfile;
 
 const styles = StyleSheet.create({
+  wrapper: {
+    position: 'absolute',
+    top: verticalScale(5),
+    width: SCREEN_WIDTH * 0.91,
+    left: scale(20),
+    // borderWidth: 1,
+    // alignSelf: 'center',
+  },
+  bar: {
+    width: SCREEN_WIDTH * 0.79,
+    left: scale(40),
+    height: verticalScale(8),
+    borderRadius: 20,
+    overflow: 'hidden',
+    backgroundColor: '#ddd',
+  },
+  backImgContainer: {
+    width: scale(24),
+    height: verticalScale(24),
+    top: verticalScale(20),
+    // left: scale(20),
+  },
+  img: {
+    width: scale(22),
+    height: verticalScale(16),
+  },
   Headingtext: {
     fontWeight: '600',
     fontSize: scale(24),

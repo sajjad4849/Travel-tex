@@ -25,44 +25,40 @@ const SocialLoginScreen = () => {
       </View>
 
       {/* Auth Section */}
-      <View style={styles.authSection}>
+      <View style={styles.TitleContainer}>
         <Text style={styles.title}>Let's you in</Text>
-
-        <View style={styles.buttonsWrapper}>
-          <SocialAuthButton
-            img={require('../../../assets/imges/fb-icon.png')}
-            title="Continue with Facebook"
-          />
-          <SocialAuthButton
-            img={require('../../../assets/imges/google.png')}
-            title="Continue with Google"
-          />
-          <SocialAuthButton
-            img={require('../../../assets/imges/apple.png')}
-            title="Continue with Apple"
-          />
-        </View>
       </View>
-      <View style={styles.BottomSide}>
-        <View
-          style={{
-            alignItems: 'center',
-            alignSelf: 'center',
-            marginTop: 10,
-            paddingHorizontal: scale(20),
-          }}>
-          <Image
-            source={require('../../../assets/imges/line.png')}
-            style={{paddingHorizontal: scale(20)}}
-          />
+      <View style={styles.InnerSectionsContainer}>
+        <View style={styles.authSection}>
+          <View style={styles.buttonsWrapper}>
+            <SocialAuthButton
+              img={require('../../../assets/imges/fb-icon.png')}
+              title="Continue with Facebook"
+            />
+            <SocialAuthButton
+              img={require('../../../assets/imges/google.png')}
+              title="Continue with Google"
+            />
+            <SocialAuthButton
+              img={require('../../../assets/imges/apple.png')}
+              title="Continue with Apple"
+            />
+          </View>
         </View>
-        <View>
-          <Button title="Login" onPress={handleNavigation} />
-        </View>
-        <View>
-          <Text style={styles.text1}>
-            Don't have an account?<Text style={styles.text2}>Sig Up</Text>
-          </Text>
+        <View style={styles.BottomSide}>
+          <View style={styles.linImg}>
+            <Image
+              source={require('../../../assets/imges/line.png')}
+              style={styles.HorizentalLine}
+            />
+          </View>
+          <View style={styles.btnStyle}>
+            <Button title="Login" onPress={handleNavigation} />
+          </View>
+          <View style={styles.TextContainer}>
+            <Text style={styles.text1}>Don't have an account?</Text>
+            <Text style={styles.text2}>Sig Up</Text>
+          </View>
         </View>
       </View>
     </View>
@@ -73,30 +69,42 @@ export default SocialLoginScreen;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
-    paddingHorizontal: scale(15),
-    paddingTop: verticalScale(60),
-    paddingBottom: verticalScale(30),
-    // justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#fff',
-    borderWidth: 2,
+    // backgroundColor: '#fff',
+    // borderWidth: 2,
+    width: SCREEN_WIDTH * 0.9,
+    height: verticalScale(650),
+    left: scale(20),
+    paddingTop: verticalScale(31),
+    gap: moderateScale(40),
   },
   logoSection: {
     alignItems: 'center',
+    // borderWidth: 2,
   },
   imgStyle: {
     width: scale(120),
     height: verticalScale(120),
+    resizeMode: 'contain',
   },
   authSection: {
-    width: '100%',
+    width: SCREEN_WIDTH * 0.9,
+    height: verticalScale(220),
     alignItems: 'center',
+    // borderWidth: 2,
+    // borderColor: 'blue',
+    gap: moderateScale(20),
+  },
+  TitleContainer: {
+    width: SCREEN_WIDTH * 0.9,
+    height: verticalScale(48),
+    // borderWidth: 2,
   },
   title: {
+    fontFamily: 'Montserrat',
     fontWeight: '600',
-    fontSize: scale(28),
-    marginBottom: verticalScale(24),
+    fontSize: scale(32),
+    lineHeight: verticalScale(48),
     textAlign: 'center',
   },
   buttonsWrapper: {
@@ -104,20 +112,44 @@ const styles = StyleSheet.create({
     gap: verticalScale(16),
     // borderWidth: 2,
   },
-
+  InnerSectionsContainer: {
+    gap: moderateScale(28),
+  },
   BottomSide: {
-    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    width: SCREEN_WIDTH * 0.9,
+    height: verticalScale(145),
     // borderWidth: 2,
-    width: '100%',
+    // borderColor: 'red',
     gap: scale(25),
   },
+  TextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: moderateScale(4),
+    paddingBottom: scale(15),
+  },
   text1: {
-    textAlign: 'center',
+    fontFamily: 'Urbanist',
     fontWeight: 600,
     fontSize: scale(16),
     color: '#858585',
   },
   text2: {
+    fontFamily: 'Urbanist',
     color: 'black',
   },
+  linImg: {
+    width: SCREEN_WIDTH * 0.9,
+    alignItems: 'center',
+    alignSelf: 'center',
+    // top: verticalScale(25),
+    paddingHorizontal: scale(20),
+    // backgroundColor: 'red',
+  },
+  HorizentalLine: {
+    width: SCREEN_WIDTH * 0.9,
+  },
+  btnStyle: {},
 });

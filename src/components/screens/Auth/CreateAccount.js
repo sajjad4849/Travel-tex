@@ -1,4 +1,11 @@
-import {View, Text, StyleSheet, TextInput, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import {Dimensions} from 'react-native';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import Inputbox from '../../common/Inputbox';
@@ -11,10 +18,22 @@ const CreateAccount = () => {
   const NavigationHandler = () => {
     navigation.navigate('OTP');
   };
+  const BackHandlerfun = () => {
+    navigation.goBack();
+  };
   return (
     <View>
+      <TouchableOpacity onPress={BackHandlerfun}>
+        <View style={styles.BackImgContainer}>
+          <Image
+            source={require('../../../assets/imges/Back.png')}
+            style={styles.imgModify}
+          />
+        </View>
+      </TouchableOpacity>
+
       <View style={styles.Container}>
-        <View>
+        <View style={styles.HeadingText}>
           <Text style={styles.text1}>Create Your New Account</Text>
         </View>
         <View style={{height: verticalScale(300)}}>
@@ -49,7 +68,13 @@ const CreateAccount = () => {
           </View>
         </View>
         <View style={styles.ThirdSection}>
-          <Image source={require('../../../assets/imges/line.png')} />
+          <View style={styles.ThirdContainerImg}>
+            <Image
+              source={require('../../../assets/imges/line.png')}
+              style={styles.imgeStyling}
+            />
+          </View>
+
           <View style={styles.GoogleAndApple}>
             <View style={styles.googleSection}>
               <View style={styles.googleInnerSection}>
@@ -77,39 +102,72 @@ const CreateAccount = () => {
 export default CreateAccount;
 
 const styles = StyleSheet.create({
+  BackImgContainer: {
+    width: scale(24),
+    height: verticalScale(24),
+    top: verticalScale(30),
+    left: scale(20),
+  },
+  imgModify: {
+    width: scale(22),
+    height: verticalScale(16),
+  },
   Container: {
     flex: 1,
     position: 'absolute',
-    width: SCREEN_WIDTH * 0.95,
-    height: SCREEN_HEIGHT * 0.86,
-    top: SCREEN_HEIGHT * 0.1,
-    left: SCREEN_WIDTH * 0.03,
-    gap: moderateScale(20),
+    width: SCREEN_WIDTH * 0.93,
+    height: SCREEN_HEIGHT * 0.92,
+    top: verticalScale(52),
+    // top: SCREEN_HEIGHT * 0.1,
+    left: SCREEN_WIDTH * 0.04,
+    gap: moderateScale(30),
+    // borderWidth: 2,
+  },
+  HeadingText: {
+    gap: moderateScale(4),
+    height: verticalScale(92),
   },
   text1: {
+    fontFamily: 'Montserrat',
     fontWeight: 600,
-    fontSize: moderateScale(32),
+    fontSize: scale(32),
     lineHeight: verticalScale(46),
   },
   lableStyle: {
+    fontFamily: 'Montserrat',
     fontWeight: 500,
-    fontSize: moderateScale(16),
+    fontSize: scale(16),
     height: verticalScale(24),
+    marginBottom: 6,
   },
   form: {
-    height: verticalScale(348),
+    width: SCREEN_WIDTH * 0.93,
+    height: verticalScale(355),
     gap: moderateScale(12),
+    // borderWidth: 2,
+    // borderColor: 'blue',
   },
   ThirdSection: {
-    height: verticalScale(128),
+    width: SCREEN_WIDTH * 0.93,
+    // borderWidth: 2,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    height: verticalScale(144),
     gap: moderateScale(20),
     marginTop: verticalScale(32),
   },
+  ThirdContainerImg: {
+    width: SCREEN_WIDTH * 0.93,
+  },
+  imgeStyling: {
+    width: SCREEN_WIDTH * 0.93,
+  },
   GoogleAndApple: {
+    width: SCREEN_WIDTH * 0.93,
     height: verticalScale(60),
     flexDirection: 'row',
     gap: moderateScale(10),
-    borderColor: 'blue',
+    // borderColor: 'blue',
   },
   googleSection: {
     justifyContent: 'center',
@@ -117,9 +175,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: moderateScale(12),
     height: verticalScale(60),
-    width: scale(158),
+    width: scale(155),
   },
   bottomText: {
+    fontFamily: 'Montserrat',
     textAlign: 'center',
     color: '#858585',
     fontWeight: 400,
@@ -127,6 +186,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'black',
+    fontFamily: 'Montserrat',
   },
   googleInnerSection: {
     gap: moderateScale(12),

@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 // import {AccountList} from './SelectAcData';
@@ -14,7 +15,12 @@ const Card = ({img, title, subtitle, style, titleColor}) => {
           </View>
           <View style={styles.textContainer}>
             <View
-              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              // eslint-disable-next-line react-native/no-inline-styles
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
               <Text style={[styles.titlestyle, {color: titleColor}]}>
                 {title}
               </Text>
@@ -33,43 +39,51 @@ export default Card;
 const styles = StyleSheet.create({
   CardContaner: {
     width: SCREEN_WIDTH * 0.9,
-    height: verticalScale(105),
-    borderRadius: 20,
-    borderWidth: 1,
+    height: verticalScale(148),
+    borderRadius: moderateScale(20),
+    // borderWidth: 2,
   },
   ChildContainer: {
+    width: SCREEN_WIDTH * 0.9,
+    height: verticalScale(148),
     flexDirection: 'row',
     alignItems: 'center',
-    // borderWidth: 2,
+    borderWidth: 1,
+    borderRadius: moderateScale(20),
     // borderColor: 'blue',
   },
   imgeStyle: {
     width: moderateScale(90),
     height: moderateScale(90),
-    top: '11%',
-    left: '12%',
-    // borderWidth: 2,
+    resizeMode: 'contain',
+    left: scale(20),
   },
   textContainer: {
-    width: SCREEN_WIDTH * 0.56,
-    left: '10%',
-    top: '10%',
+    width: scale(194),
+    left: scale(29),
+    // top: verticalScale(),
     // borderWidth: 2,
     gap: 8,
   },
   titlestyle: {
+    fontFamily: 'Montserrat',
     fontWeight: 600,
     fontSize: scale(16),
     lineHeight: 24,
   },
   subtitlestyle: {
+    fontFamily: 'Montserrat',
+    height: verticalScale(60),
+    width: scale(194),
     fontWeight: 400,
     fontSize: scale(14),
     color: '#858585',
-    lineHeight: 20,
+    lineHeight: verticalScale(20),
+    // borderWidth: 2,
+    // borderColor: 'red',
   },
   radiOuter: {
-    width: scale(14),
+    width: scale(12),
     height: verticalScale(12),
     borderWidth: 1,
     borderRadius: moderateScale(10),

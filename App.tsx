@@ -20,6 +20,7 @@ import SubScription from './src/components/screens/Profile/SubScription';
 import Home from './src/components/screens/home/Home';
 import BottomTabs from './src/components/screens/home/BottomTabs';
 import Delete from './Delete';
+import EditScreen from './src/components/screens/home/EditScreen';
 const Stack = createNativeStackNavigator();
 const App = () => {
   return (
@@ -103,6 +104,11 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={BottomTabs}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="EditScreen"
+          component={EditScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

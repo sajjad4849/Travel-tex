@@ -1,5 +1,4 @@
 import {
-  FlatList,
   StyleSheet,
   Text,
   View,
@@ -35,7 +34,7 @@ const CreateNewPassword = () => {
   }, [openModal]);
 
   return (
-    <View style={{flex: 1}}>
+    <View>
       <Modal
         key="firstModal"
         visible={openModal}
@@ -63,7 +62,14 @@ const CreateNewPassword = () => {
           </View>
         </View>
       </Modal>
-
+      <TouchableOpacity>
+        <View style={styles.ImageContainer}>
+          <Image
+            source={require('../../../assets/imges/Back.png')}
+            style={styles.img}
+          />
+        </View>
+      </TouchableOpacity>
       <View style={styles.Container}>
         <Text style={styles.Heading}>Create New Password</Text>
       </View>
@@ -102,6 +108,16 @@ const CreateNewPassword = () => {
 export default CreateNewPassword;
 
 const styles = StyleSheet.create({
+  ImageContainer: {
+    width: scale(24),
+    height: verticalScale(24),
+    top: verticalScale(30),
+    left: scale(20),
+  },
+  img: {
+    width: scale(22),
+    height: verticalScale(16),
+  },
   Container: {
     position: 'absolute',
     width: SCREEN_WIDTH * 0.9,
@@ -109,8 +125,10 @@ const styles = StyleSheet.create({
     top: 109,
     left: 20,
     gap: moderateScale(40),
+    // borderWidth: 1,
   },
   Heading: {
+    fontFamily: 'Montserrat',
     fontWeight: '700',
     fontSize: scale(24),
     lineHeight: verticalScale(36),
@@ -118,10 +136,11 @@ const styles = StyleSheet.create({
   subHeading: {
     height: verticalScale(24),
     position: 'absolute',
-    top: 161,
-    left: 20,
+    top: verticalScale(161),
+    left: scale(20),
   },
   textStyle: {
+    fontFamily: 'Montserrat',
     fontWeight: '400',
     fontSize: scale(16),
     lineHeight: verticalScale(24),
@@ -140,6 +159,7 @@ const styles = StyleSheet.create({
     gap: moderateScale(12),
   },
   label: {
+    fontFamily: 'Montserrat',
     fontWeight: '500',
     fontSize: scale(16),
   },
@@ -164,7 +184,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     top: 40,
-    width: '0%',
+    width: '90%',
     zIndex: 1001,
   },
   imgContainer: {
@@ -178,6 +198,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   modalText: {
+    fontFamily: 'Montserrat',
     fontWeight: '600',
     fontSize: scale(24),
     lineHeight: verticalScale(36),
@@ -197,6 +218,6 @@ const styles = StyleSheet.create({
   },
   modelTextContainer: {
     position: 'absolute',
-    top: verticalScale(180),
+    top: verticalScale(230),
   },
 });

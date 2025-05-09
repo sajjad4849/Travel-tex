@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import {Dimensions} from 'react-native';
@@ -12,6 +12,7 @@ const ClinderList = ({
   status,
   Amount,
   Mycolor,
+  onPress,
 }) => {
   console.log('status.............', status);
   return (
@@ -32,7 +33,9 @@ const ClinderList = ({
           <Text style={styles.titleText}>{status}</Text>
         </View>
         <View style={{width: scale(20)}}>
-          <Image source={MenueIcon} style={styles.popap} />
+          <TouchableOpacity onPress={onPress}>
+            <Image source={MenueIcon} style={styles.popap} />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
     height: verticalScale(48),
     borderRadius: 4,
     // borderWidth: 1,
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -68,28 +71,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleStyle: {
+    fontFamily: 'Montserrat',
     width: scale(68),
     // borderWidth: 1,
     left: scale(6),
   },
   titleText: {
     fontFamily: 'Lato',
-    fontWeight: 400,
-    fontSize: 12,
+    fontWeight: '400',
+    fontSize: scale(12),
     color: '#333333',
   },
   ClinderImage: {
-    height: verticalScale(17),
-    width: scale(16),
+    height: verticalScale(15),
+    width: scale(15),
     resizeMode: 'contain',
   },
   dollarImage: {
-    width: scale(20),
-    height: verticalScale(20),
+    width: scale(18),
+    height: verticalScale(15),
     resizeMode: 'contain',
   },
   popap: {
-    width: scale(4),
     height: verticalScale(14),
+    resizeMode: 'contain',
   },
 });
