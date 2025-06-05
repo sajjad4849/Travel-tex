@@ -27,7 +27,7 @@ export default StyleSheet.create({
   subTitle: {
     fontWeight: '300',
     fontSize: scale(19),
-    color: '#858585',
+    color: 'blue',
     textAlign: 'center',
     marginHorizontal: 5,
     lineHeight: 30,
