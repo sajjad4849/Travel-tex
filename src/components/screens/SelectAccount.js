@@ -6,8 +6,9 @@ const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
 import Card from '../common/Card';
 import {AccountList} from '../common/SelectAcData';
 import {useNavigation} from '@react-navigation/native';
+import {white} from 'react-native-paper/lib/typescript/styles/themes/v2/colors';
 const SelectAccount = () => {
-  const [activeId, setActiveId] = useState(null);
+  const [activeId, setActiveId] = useState('1');
   const navigation = useNavigation();
   // Navigation
   const HandleNavigation = () => {
@@ -28,9 +29,10 @@ const SelectAccount = () => {
   console.log('ActiveID:', activeId);
   const handleCardPress = id => {
     setActiveId(id);
+    console.log('here is id..........id', id);
   };
   return (
-    <View style={{backgroundColor: 'white'}}>
+    <View style={{backgroundColor: 'white', flex: 1}}>
       <View style={styles.BackIconContainer}>
         <TouchableOpacity onPress={NavBackHandler}>
           <Image
@@ -64,6 +66,7 @@ const SelectAccount = () => {
                 subtitle={item.subtitle}
                 titleColor={activeId === item.id ? 'white' : 'black'}
                 style={activeId === item.id ? styles.activeCard : null}
+                RadioBackground={activeId === item.id ? '#FF5E5E' : 'white'}
               />
             </TouchableOpacity>
           ))}
@@ -81,6 +84,7 @@ const styles = StyleSheet.create({
     top: verticalScale(40),
     // borderWidth: 2,
     left: scale(20),
+    gap: moderateScale(20),
   },
   SecondContainer: {
     width: SCREEN_WIDTH * 0.91,
@@ -91,12 +95,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat',
     fontWeight: 600,
     fontSize: scale(32),
-    // lineHeight: 46,
+    lineHeight: 46,
   },
   SecondPara: {
     width: SCREEN_WIDTH * 0.9,
     // height: verticalScale(48),
     // top: verticalScale(66),
+    // borderWidth: 2,
   },
   descriptionStyle: {
     fontFamily: 'Montserrat',
@@ -107,9 +112,10 @@ const styles = StyleSheet.create({
   activeCard: {
     backgroundColor: '#200233',
   },
-  // MapContainer: {
-  //   gap: moderateScale(20),
-  // },
+  MapContainer: {
+    gap: moderateScale(20),
+    // borderWidth: 2,
+  },
   BackIconContainer: {
     left: scale(20),
     top: verticalScale(20),

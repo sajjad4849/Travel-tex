@@ -20,12 +20,13 @@ export default SocialAuthButton;
 
 const styles = StyleSheet.create({
   btn: {
-    width: SCREEN_WIDTH * 0.9,
-    height: verticalScale(60),
+    width: SCREEN_WIDTH * 0.93,
+    height: verticalScale(50),
     borderRadius: moderateScale(16),
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 1,
+    borderColor: '#E2E2E2',
   },
   InnerSection: {
     flexDirection: 'row',
@@ -42,6 +43,6 @@ const styles = StyleSheet.create({
     fontWeight: 500,
     fontSize: scale(16),
     fontFamily: 'Montserrat',
-    lineHeight: verticalScale(24),
+    // lineHeight: verticalScale(24),
   },
 });

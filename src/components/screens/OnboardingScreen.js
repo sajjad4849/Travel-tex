@@ -81,5 +81,4 @@ const OnboardingScreen = () => {
     </View>
   );
 };
-
 export default OnboardingScreen;

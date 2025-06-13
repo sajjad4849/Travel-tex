@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 import {Dimensions} from 'react-native';
 import {moderateScale, scale, verticalScale} from 'react-native-size-matters';
 const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
-const Card = ({img, title, subtitle, style, titleColor}) => {
+const Card = ({img, title, subtitle, style, titleColor, RadioBackground}) => {
   return (
     <View>
       <View style={[styles.CardContaner, style]}>
@@ -24,7 +24,15 @@ const Card = ({img, title, subtitle, style, titleColor}) => {
               <Text style={[styles.titlestyle, {color: titleColor}]}>
                 {title}
               </Text>
-              <TouchableOpacity style={styles.radiOuter}></TouchableOpacity>
+              <TouchableOpacity style={[styles.radiOuter]}>
+                <View
+                  style={[
+                    styles.radioInner,
+                    {
+                      backgroundColor: RadioBackground,
+                    },
+                  ]}></View>
+              </TouchableOpacity>
             </View>
             <Text style={styles.subtitlestyle}>{subtitle}</Text>
           </View>
@@ -87,5 +95,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: moderateScale(10),
     right: 5,
+  },
+  radioInner: {
+    width: scale(9),
+    height: verticalScale(9),
+    borderRadius: moderateScale(20),
   },
 });
